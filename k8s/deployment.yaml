@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todosummaryassistant
+  labels:
+    app: todosummaryassistant
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: todosummaryassistant
+  template:
+    metadata:
+      labels:
+        app: todosummaryassistant
+    spec:
+      containers:
+        - name: todosummaryassistant
+          image: 508525312846.dkr.ecr.eu-north-1.amazonaws.com/todosummaryassistant:latest
+          imagePullPolicy: Always
+
+          envFrom:
+            - configMapRef:
+                name: todosummary-config
+            - secretRef:
+                name: todosummary-secrets
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"
+
+          livenessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - "echo alive"
+            initialDelaySeconds: 30
+            periodSeconds: 30
+
+          readinessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - "echo ready"
+            initialDelaySeconds: 10
+            periodSeconds: 15

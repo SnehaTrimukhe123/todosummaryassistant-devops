@@ -255,9 +255,7 @@ Only critical issues are configured to trigger alerts.
 
 ## Demo Screenshots
 ### 01. GitHub Repository Structure
-![GitHub Repository]![01-github-repository-structure](https://github.com/user-attachments/assets/d160c5c1-9cf3-4929-92b6-8d0ee5588dd6)
-
-
+![GitHub Repository](https://github.com/user-attachments/assets/d160c5c1-9cf3-4929-92b6-8d0ee5588dd6)
 
 ### 02. Jenkins Pipeline – Successful Build
 ![Jenkins Pipeline]![02-jenkins-pipeline-success](https://github.com/user-attachments/assets/deabaa68-ef54-43e1-a86b-ec449ff9e45d)

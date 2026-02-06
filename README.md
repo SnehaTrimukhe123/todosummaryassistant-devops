@@ -124,3 +124,137 @@ A full-stack application to manage personal to-do items, summarize pending tasks
 ![Screenshot (1144)](https://github.com/user-attachments/assets/474b1a46-36c8-4407-8bf9-a46ca911603b)
 
 ![Screenshot (1143)](https://github.com/user-attachments/assets/1e9f8783-d0df-42ce-a3f8-ec7ca5e7c078)
+---
+
+# DevOps Implementation Details
+
+This section explains how the DevOps pipeline was implemented for this project.
+The focus was on automation, deployment, and operations without modifying the existing application logic.
+
+---
+
+## AWS Infrastructure Setup
+
+All DevOps components for this project are hosted on AWS.
+
+An EC2 instance is used as the main DevOps server. This instance is responsible for running Jenkins, building Docker images, and interacting with the Kubernetes cluster.
+
+AWS ECR is used to store Docker images, and AWS EKS is used to run the application using Kubernetes.
+
+---
+
+## DevOps Tools on EC2
+
+The following tools were installed and configured on the EC2 instance:
+
+- Git for source control access
+- Java 17 and Maven for building the backend
+- Docker for containerization
+- Jenkins for Continuous Integration
+- AWS CLI for AWS access
+- kubectl and eksctl for Kubernetes and EKS management
+
+---
+
+## Source Code Management
+
+GitHub is used to manage the source code.
+Both application code and Kubernetes configuration files are stored in the same repository.
+Git acts as the single source of truth for the deployment.
+
+---
+
+## Continuous Integration Using Jenkins
+
+Jenkins is configured only for Continuous Integration.
+
+Whenever code is pushed to GitHub, Jenkins automatically:
+- Pulls the latest code
+- Builds the backend using Maven
+- Runs tests if available
+- Builds a Docker image
+- Pushes the Docker image to AWS ECR
+
+All sensitive values such as AWS credentials are stored securely using Jenkins credentials.
+No secrets are hardcoded in the repository.
+
+Jenkins does not deploy the application to Kubernetes.
+
+---
+
+## Dockerization Approach
+
+The backend application is packaged into a Docker image using a multi-stage Dockerfile.
+
+The build stage compiles the application, and the runtime stage runs it using a lightweight Java image.
+The container runs as a non-root user to follow security best practices.
+
+---
+
+## Kubernetes Deployment on EKS
+
+The application is deployed to AWS EKS using Kubernetes YAML manifests.
+
+The deployment includes:
+- A Deployment to manage pods and replicas
+- A Service to expose the application
+- ConfigMaps for non-sensitive configuration
+- Secrets for sensitive values
+
+Resource requests, limits, and health checks are defined to ensure stable runtime behavior.
+
+---
+
+## GitOps Deployment with ArgoCD
+
+GitOps is implemented using ArgoCD.
+
+ArgoCD is installed inside the EKS cluster and continuously monitors the GitHub repository.
+Only the `k8s/` directory is tracked for deployments.
+
+Whenever a change is made to Kubernetes manifests in Git, ArgoCD automatically applies the change to the cluster.
+This ensures that the cluster state always matches what is defined in Git.
+
+---
+
+## Rollback Strategy
+
+Rollback is handled through Git.
+
+If a faulty deployment occurs, the Git commit is reverted.
+ArgoCD detects this change and automatically restores the previous stable version of the application.
+
+This makes rollback simple, fast, and reliable.
+
+---
+
+## Failure Handling
+
+Common failure scenarios are handled as follows:
+
+- If the application crashes, Kubernetes restarts the pod automatically
+- If Jenkins is unavailable, deployments are still managed through GitOps
+- If a Kubernetes node fails, pods are rescheduled to healthy nodes
+- If a secret is compromised, it is rotated and redeployed
+
+---
+
+## Monitoring and Operations
+
+Monitoring is focused on infrastructure and application health.
+
+Key aspects include:
+- Pod CPU and memory usage
+- Pod restart counts
+- Node health status
+
+Logs and Kubernetes events are used to detect and investigate issues early.
+Only critical issues are configured to trigger alerts.
+
+---
+
+## Proof of Implementation
+
+Screenshots demonstrating successful pipeline execution, Docker image availability, Kubernetes deployment, and ArgoCD synchronization are available in the `screenshots/` directory.
+
+

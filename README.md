@@ -258,19 +258,16 @@ Only critical issues are configured to trigger alerts.
 ![GitHub Repository](https://github.com/user-attachments/assets/d160c5c1-9cf3-4929-92b6-8d0ee5588dd6)
 
 ### 02. Jenkins Pipeline – Successful Build
-![Jenkins Pipeline]![02-jenkins-pipeline-success](https://github.com/user-attachments/assets/deabaa68-ef54-43e1-a86b-ec449ff9e45d)
-
+![Jenkins Pipeline](https://github.com/user-attachments/assets/deabaa68-ef54-43e1-a86b-ec449ff9e45d)
 
 ### 03. Docker Image in AWS ECR
-![ECR Image]![03-aws-ecr-image](https://github.com/user-attachments/assets/a7f59ffa-09ac-4fdd-8467-2abef9ff18c0)
+![ECR Image](https://github.com/user-attachments/assets/a7f59ffa-09ac-4fdd-8467-2abef9ff18c0)
 
 ### 04. Kubernetes Pods Running
-![Kubernetes Pods]![04-kubernetes-pods](https://github.com/user-attachments/assets/5df84386-fa84-4832-a24c-2fef569cdedc)
-
+![Kubernetes Pods](https://github.com/user-attachments/assets/5df84386-fa84-4832-a24c-2fef569cdedc)
 
 ### 05. ArgoCD Application Created
-![ArgoCD App]![Uploading 05-argocd-application.png…]()
-
+![ArgoCD App](https://github.com/user-attachments/assets/c090b9d2-4047-4f48-a6fb-30b05a1d0853)
 
 06-argocd-synced
 ![06-argocd-synced](https://github.com/user-attachments/assets/ff398add-3d40-44c6-ae2d-529cc3205182)

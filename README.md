@@ -257,4 +257,34 @@ Only critical issues are configured to trigger alerts.
 
 Screenshots demonstrating successful pipeline execution, Docker image availability, Kubernetes deployment, and ArgoCD synchronization are available in the `screenshots/` directory.
 
+## Demo Screenshots
+01-github-repository-structure
+
+![01-github-repository-structure](https://github.com/user-attachments/assets/cce45496-be8e-4915-98b9-da58127aaf56)
+
+02-jenkins-pipeline-success
+
+![02-jenkins-pipeline-success](https://github.com/user-attachments/assets/7485ca52-eb36-4a99-8023-08bd7caaa48d)
+
+03-aws-ecr-image
+
+![03-aws-ecr-image](https://github.com/user-attachments/assets/04d0d832-f6a4-4e67-95ba-06bdfd51d5df)
+
+04-kubernetes-pods
+
+![04-kubernetes-pods](https://github.com/user-attachments/assets/2dcd46ca-a868-4727-b388-00e50343a6d2)
+
+05-argocd-application
+
+![05-argocd-application](https://github.com/user-attachments/assets/5059be8d-a601-4720-851a-e215132352f0)
+
+06-argocd-synced
+
+![06-argocd-synced](https://github.com/user-attachments/assets/ff398add-3d40-44c6-ae2d-529cc3205182)
+
+
+
+
+
+
 

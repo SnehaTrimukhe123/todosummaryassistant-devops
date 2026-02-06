@@ -254,10 +254,19 @@ Only critical issues are configured to trigger alerts.
 ---
 
 ## Demo Screenshots
+### 01. GitHub Repository Structure
 ![01-github-repository-structure](https://github.com/user-attachments/assets/6cf544e6-4b3a-480a-a96f-22f64fd64d81)
+
+### 02. Jenkins Pipeline – Successful Build
 ![02-jenkins-pipeline-success](https://github.com/user-attachments/assets/858822ee-7dfd-407d-9fb5-d5d33a496578)
+
+### 03. Docker Image in AWS ECR
 ![03-aws-ecr-image](https://github.com/user-attachments/assets/b29a9f93-0402-4171-baed-19fd2bdc7cd8)
+
+### 04. Kubernetes Pods Running
 ![04-kubernetes-pods](https://github.com/user-attachments/assets/f837cb7e-5c4e-472a-b0c4-d0b0cd1ee7d1)
+
+### 05. ArgoCD Application Created
 ![05-argocd-application](https://github.com/user-attachments/assets/5c4ca2b2-7418-4cdf-b369-9f6199af4bd1)
 
 06-argocd-synced

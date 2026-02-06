@@ -255,19 +255,19 @@ Only critical issues are configured to trigger alerts.
 
 ## Demo Screenshots
 ### 01. GitHub Repository Structure
-![GitHub Repository](https://github.com/user-attachments/assets/IMAGE_ID_1)
+![GitHub Repository](https://github.com/user-attachments/assets/6e54d38a-978b-4ed3-9245-e150a0e8a5b2)
 
 ### 02. Jenkins Pipeline – Successful Build
-![Jenkins Pipeline](https://github.com/user-attachments/assets/IMAGE_ID_2)
+![Jenkins Pipeline](https://github.com/user-attachments/assets/e1a3f648-8361-42de-8ce3-5bc6e203e860)
 
 ### 03. Docker Image in AWS ECR
-![ECR Image](https://github.com/user-attachments/assets/IMAGE_ID_3)
+![ECR Image](https://github.com/user-attachments/assets/c80406fe-2293-4b6f-9da2-f5e32258799b)
 
 ### 04. Kubernetes Pods Running
-![Kubernetes Pods](https://github.com/user-attachments/assets/IMAGE_ID_4)
+![Kubernetes Pods](https://github.com/user-attachments/assets/52c1e10a-3e1b-4fb3-8a86-59e7d283ecd5)
 
 ### 05. ArgoCD Application Created
-![ArgoCD App](https://github.com/user-attachments/assets/IMAGE_ID_5)
+![ArgoCD App](https://github.com/user-attachments/assets/49d20d93-bd5f-4279-b818-76df046f5770)
 
 06-argocd-synced
 ![06-argocd-synced](https://github.com/user-attachments/assets/ff398add-3d40-44c6-ae2d-529cc3205182)
